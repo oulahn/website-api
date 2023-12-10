@@ -1,6 +1,10 @@
 <?php
 
 require '../db/env.php';
+$servername = "database-server";
+$username = "oulahn";
+$password = "Password@123#";
+$dbname = "LottoDB";
 
 $conn = new mysqli($mysql_host, $mysql_user, $mysql_pass, $mysql_db);
 
