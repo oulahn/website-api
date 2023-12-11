@@ -29,7 +29,7 @@ pipeline {
                 script {
                     // Deploy your application using the Docker image
                     docker.withRegistry('https://registry.example.com', 'docker-credentials') {
-                        docker.image(env.DOCKER_IMAGE).run('-p 8080:80 --name my-app-container')
+                        docker.image(env.DOCKER_IMAGE).run('-p 8080:80 --name webapp-api')
                     }
                 }
             }
@@ -39,7 +39,7 @@ pipeline {
     post {
         success {
             // Notify success (e.g., send an email)
-            emailext attachLog: true, body: 'Build successful!', subject: 'Build Success', to: 'your-email@example.com'
+            emailext attachLog: true, body: 'Build successful!', subject: 'Build Success', to: 'oula.hnaino@gmail.com'
         }
         failure {
             // Notify failure (e.g., send an email)
