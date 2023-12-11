@@ -19,7 +19,7 @@ pipeline {
                    // docker.build(env.DOCKER_IMAGE)
                    // docker.withRegistry('https://hub.docker.com', 'docker-credentials') {
                      //   docker.image(env.DOCKER_IMAGE).push()
-                    def dockerImage = docker.image('your-image:tag')
+                    def dockerImage = docker.image('oulahn-webapp-api:latest')
                     dockerImage.build()
                     dockerImage.push()                        
                     }
