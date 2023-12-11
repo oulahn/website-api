@@ -17,7 +17,7 @@ pipeline {
                 script {
                     // Build and push your Docker image
                     docker.build(env.DOCKER_IMAGE)
-                    docker.withRegistry('https://registry.example.com', 'docker-credentials') {
+                    docker.withRegistry('https://hub.docker.com', 'docker-credentials') {
                         docker.image(env.DOCKER_IMAGE).push()
                     }
                 }
