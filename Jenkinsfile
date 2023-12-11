@@ -42,7 +42,7 @@ pipeline {
     post {
         success {
             // Notify success (e.g., send an email)
-            emailext attachLog: true, body: 'Build successful!', subject: 'Build Success', to: 'your-email@example.com'
+            emailext attachLog: true, body: 'Build successful!', subject: 'Build Success', to: 'oula.hnaino@gmail.com'
         }
         failure {
             // Notify failure (e.g., send an email)
