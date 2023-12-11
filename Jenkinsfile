@@ -16,9 +16,12 @@ pipeline {
             steps {
                 script {
                     // Build and push your Docker image
-                    docker.build(env.DOCKER_IMAGE)
-                    docker.withRegistry('https://hub.docker.com', 'docker-credentials') {
-                        docker.image(env.DOCKER_IMAGE).push()
+                   // docker.build(env.DOCKER_IMAGE)
+                   // docker.withRegistry('https://hub.docker.com', 'docker-credentials') {
+                     //   docker.image(env.DOCKER_IMAGE).push()
+                    def dockerImage = docker.image('your-image:tag')
+                    dockerImage.build()
+                    dockerImage.push()                        
                     }
                 }
             }
