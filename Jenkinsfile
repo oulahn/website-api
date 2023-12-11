@@ -16,12 +16,9 @@ pipeline {
             steps {
                 script {
                     // Build and push your Docker image
-                   // docker.build(env.DOCKER_IMAGE)
-                   // docker.withRegistry('https://hub.docker.com', 'docker-credentials') {
-                     //   docker.image(env.DOCKER_IMAGE).push()
-                    def dockerImage = docker.image('oulahn-webapp-api:latest')
-                    dockerImage.build()
-                    dockerImage.push()                        
+                    def dockerImage = docker.build(env.DOCKER_IMAGE)
+                    docker.withRegistry('https://hub.docker.com', 'docker-credentials') {
+                        dockerImage.push()
                     }
                 }
             }
@@ -42,7 +39,7 @@ pipeline {
     post {
         success {
             // Notify success (e.g., send an email)
-            emailext attachLog: true, body: 'Build successful!', subject: 'Build Success', to: 'oula.hnaino@gmail.com'
+            emailext attachLog: true, body: 'Build successful!', subject: 'Build Success', to: 'your-email@example.com'
         }
         failure {
             // Notify failure (e.g., send an email)
