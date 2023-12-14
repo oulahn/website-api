@@ -1,9 +1,9 @@
 <?php
 
-$servername = "database-server";
+$servername = "database";
 $username = "oulahn";
-$password = "Password@123#";
-$dbname = "LottoDB";
+$password = "password";
+$dbname = "webapp";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
