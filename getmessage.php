@@ -1,6 +1,5 @@
 <?php
 
-require '../db/env.php';
 $servername = "database-server";
 $username = "oulahn";
 $password = "Password@123#";
