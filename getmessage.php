@@ -1,12 +1,11 @@
 <?php
 
-require '../db/env.php';
-$servername = "database-server";
+$servername = "database";
 $username = "oulahn";
-$password = "Password@123#";
-$dbname = "LottoDB";
+$password = "password";
+$dbname = "webapp";
 
-$conn = new mysqli($mysql_host, $mysql_user, $mysql_pass, $mysql_db);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
