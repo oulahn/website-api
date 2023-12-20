@@ -28,4 +28,4 @@ $conn->close();
 //useless comment test
 header('Content-Type: application/json');
 
-echo json_encode($json_resp); ///
+echo json_encode($json_resp); /
